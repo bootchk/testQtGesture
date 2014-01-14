@@ -1,0 +1,30 @@
+testQtGesture
+
+Copyright 2014 Lloyd Konneker
+
+Licensed under GPLv3
+
+
+A testbed for Qt gestures.  Written in Python using PyQt so it is easy to change.  
+
+A gestural GUI is so horribly complex that you need a reduced example for testing. This is a testbed in the sense: you don't understand something, for example Qt documentation or Qt behavior.  You want a minimal app, harnessed to log to a console.  This is a minimal, easy-to-change Qt app that can subscribe to Qt defined gestures and a few minimal custom gesture recognizers. It logs many events, for example, all seen by custom recognizers, and all gesture events seen by a typical app top-level window. 
+
+Example questions I tried to answer with this testbed:
+
+-Can you get single touch events from an Apple Trackpad on OSX using Qt (No, apparently the driver doesn't deliver them in raw form.)
+
+-Are any Qt defined gestures generated on Linux without a touch device (Yes, apparently TapAndHold is generated for mouse buttons, both left and right.  But no other gestures.)
+
+-Exactly what QGestureEvents are generated for each result returned by a QGestureRecognizer? (I intend to post the answer elsewhere.)
+
+- Does a grabbed gesture that starts in the app get events once the pointer leaves the app's top-level windows? (Yes.)
+
+- What is a GestureOverride event and what is the interaction between child and parent windows regarding gestures?  (???)
+
+- What complexity does QGraphicsFramework and QGraphicsView add to gestures? (???)
+
+- Are certain touch devices well supported for gestures in apps on Ubuntu (??? For example a Wacom Babmoo PenAndTouch doesn't behave as I expected: doesn't deliver single touch events at least in my configuration.)
+
+
+
+
